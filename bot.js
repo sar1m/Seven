@@ -374,8 +374,8 @@ async function main() {
 		if (!DAT.FIRST_RUN) {
 			SEND.messagePrimaryDiscordAdmin("Hey there! 👋", "The name's Seven, nice to be of service. 🍉\n" +
 			"Try using 'man seven' to see what I can help you and the team with!\n" +
-			"\nNeed help with something? Feel free to reach out on my [Discord channel](https://discord.gg/f3v4YuU3rr) " + 
-			"or [GitHub repo](https://github.com/Propolisa/Seven) via an issue!" 
+			"\nNeed help with something? Feel free to reach out on my [Discord channel](Wln5t0n#9639) " + 
+			"or [GitHub repo](https://github.com/sar1m/Seven) via an issue!" 
 			)
 		}
 		setInterval(() => updateDiscordIds(client, process.env.DISCORD_GUILD_ID.toString()), 30 * 60 * 1000)   // UPDATE DISCORD LINKS EVERY 30 MINUTES
@@ -608,22 +608,22 @@ async function admin_setStatus(message, params) {
 		var status = params.discordStatusType.stringValue
 		var activity = params.discordStatusActivity.stringValue
 		var actverb = params.discordStatusVerb.stringValue
-		SEND.human(message, H.any("You're the boss!\nsetting the status 😊",
+		SEND.human(message, H.any("What ever you say sensei!\nsetting the status 😊",
 			"Ok " + message.author.username + ", you got it!",
 			"you got it, " + message.author.username + " 😁",
 			"no prob, i'm on it 🍉",
 			"ok, on it! 🍉"), false)
 		await setStatus(message.client, (status ? status : "online"), (actverb ? actverb : ""), (activity ? activity : ""))
 	} else {
-		SEND.human(message, `You're not my boss! 🤔\nno can do.\nTry asking <@!${JSON.parse(process.env.ADMIN_DISCORD_IDS)[0]}>!`)
+		SEND.human(message, `You're not my sensei! 🤔\nno can do.\nTry asking <@!${JSON.parse(process.env.ADMIN_DISCORD_IDS)[0]}>!`)
 	}
 }
 
 async function forceUpdate(message) {
 	if (isCaptain(message.author) || isAdmin(message.author)) {
-		SEND.human(message, H.any("You're the boss!\nupdating the DB 😊",
+		SEND.human(message, H.any("You're the sensei!\nupdating the DB 😊",
 			"Ok " + message.author.username + ", you got it!",
-			"you got it, boss! 😁",
+			"you got it, sensei! 😁",
 			"no prob, i'm on it 🍉",
 			"ok, on it! 🍉"), false)
 		await refresh()
@@ -634,7 +634,7 @@ async function forceUpdate(message) {
 			"DB update complete!",
 			"Achivement data has been updated. 😊"), false))
 	} else {
-		SEND.human(message, `You're not my boss! 🤔\nno can do.\nTry asking <@!${JSON.parse(process.env.ADMIN_DISCORD_IDS)[0]}>!`)
+		SEND.human(message, `You're not my sensei! 🤔\nno can do.\nTry asking <@!${JSON.parse(process.env.ADMIN_DISCORD_IDS)[0]}>!`)
 	}
 }
 
@@ -648,7 +648,7 @@ async function admin_clearCached(message) {
 		DAT.CHALLENGES = {}
 		updateCache(["MACHINES", "CHALLENGES", "TEAM_MEMBERS", "TEAM_STATS", "MISC"]).then(SEND.human(message, H.any("Done!"), false))
 	} else {
-		SEND.human(message, `You're not my boss! 🤔\nno can do.\nTry asking <@!${JSON.parse(process.env.ADMIN_DISCORD_IDS)[0]}>!`)
+		SEND.human(message, `You're not my sensei! 🤔\nno can do.\nTry asking <@!${JSON.parse(process.env.ADMIN_DISCORD_IDS)[0]}>!`)
 	}
 }
 
