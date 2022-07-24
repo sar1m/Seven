@@ -120,7 +120,7 @@ class HTBEmoji {
 	of(emojiName){
 		var eId = this.idOf(emojiName)
 		//console.log("EID:", eId)
-		var resolved = console.log(resolved)
+		var resolved = this.client.guilds.resolve(process.env.EMOJI_GUILD_ID).emojis.cache.find(emoji => emoji.name == eId) || ""
 		//if (resolved) {console.warn(`EMOJI SIGHTED! ${resolved}`)}
 		return resolved
 	}
